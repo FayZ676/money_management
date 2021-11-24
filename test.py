@@ -14,15 +14,15 @@ app = Flask(__name__, template_folder='templates')
 
 @app.route("/", methods = ["GET", "POST"])
 def index():
-    # if request.method == "POST":
-    #     expenseDetails = request.form
-    #     item = expenseDetails['item']
-    #     price = expenseDetails['price']
-    #     category = expenseDetails['category']
-    #     date = expenseDetails['date']
+    if request.method == "POST":
+        expenseDetails = request.form
+        item = expenseDetails['item']
+        price = expenseDetails['price']
+        category = expenseDetails['category']
+        date = expenseDetails['date']
 
-    #     insert(item, price, category, date)
-    #     return 'success'
+        insert(item, price, category, date)
+        return 'success'
 
     return render_template("index.html")
 
